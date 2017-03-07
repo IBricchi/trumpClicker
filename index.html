@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trump Clicker</title>
+	<link rel="icon" type="image/png" href="img/trump.png">
+	<link rel="stylesheet" type="text/css" href="trumpclicker.css">
+	<meta name="author" content="Ignacio Bricchi">
+	<meta name="keywords" content="Donald, Trump, Donald Trump, Clicker, Trump Clicker, Game, Trump Game, Trump Meme, donald, trump, donald trump, clicker, trump clicker, game, trump game, trump meme, games, memes, Games, Memes">
+</head>
+<body>
+	<div id="pointsPerSec">
+		<p id="pointsPerSecTxt">People fired per second</p>
+	</div>
+	<div id="pointCount">
+		<p id="pointCountTxt">People Fired:</p>
+	</div>
+	<object width='69' height='32'><embed src='http://www.socialbuttonmaker.com/Swfs/811b0ca6-fa4f-462e-a9c3-df7c268a20d3/button.swf' type='application/x-shockwave-flash' width='69' height='32' loop='false' wmode='transparent'><noscript><a href='http://bettingincasinos.com/'>best betting options</a></noscript></embed><img src='' width=0 height=0 id='flashbutton'/><script type='text/javascript' src='http://www.socialbuttonmaker.com/Scripts/FlashButton.js'></script></object>
+	<br> <br> <br> <br> <br> <br> <br>
+	<div id="apprentice">
+		<p id="apprenticeTitle">Apprentices</p>
+		<hr>
+		<p id="apprenticeCostTxt">Cost:</p>
+		<hr>
+		<p id="apprenticeNumTxt">Owned:</p>
+	</div>
+	<div id="chinese">
+		<p id="chineseTitle">Chinese</p>
+		<hr>
+		<p id="chineseCostTxt">Cost:</p>
+		<hr>
+		<p id="chineseNumTxt">Owned:</p>
+	</div> <br> <br> <br> <br> <br> <br> <br>
+	<div id="mexican">
+		<p id="mexicanTitle">Mexican</p>
+		<hr>
+		<p id="mexicanCostTxt">Cost:</p>
+		<hr>
+		<p id="mexicanNumTxt">Owned:</p>
+	</div>
+	<div id="casino">
+		<p id="casinoTitle">Trump Casino</p>
+		<hr>
+		<p id="casinoCostTxt">Cost:</p>
+		<hr>
+		<p id="casinoNumTxt">Owned:</p>
+	</div> <br> <br> <br> <br> <br> <br> <br>
+	<div id="air">
+		<p id="airTitle">Trump Airlines</p>
+		<hr>
+		<p id="airCostTxt">Cost:</p>
+		<hr>
+		<p id="airNumTxt">Owned:</p>
+	</div>
+	<div id="votes">
+		<p id="votesTitle">Votes For Trump</p>
+		<hr>
+		<p id="votesCostTxt">Cost:</p>
+		<hr>
+		<p id="votesNumTxt">Owned:</p>
+	</div> <br> <br> <br> <br> <br> <br> <br>
+	<div id="press">
+		<p id="pressTitle">Re-election</p>
+		<hr>
+		<p id="pressCostTxt">Cost:</p>
+		<hr>
+		<p id="pressNumTxt">Owned:</p>
+	</div>
+	<div id="re">
+		<p id="reTitle">Wall</p>
+		<hr>
+		<p id="reCostTxt">Cost:</p>
+		<hr>
+		<p id="reNumTxt">Owned:</p>
+	</div>
+	<img id="trump" src="img/trump.png">
+	<img id="moneyBag" src="img/money.png">
+		<p id="pp">Rich-O Meter</p>
+	</img>
+	<audio id=audio>
+		<source src="sound/yf.mp3" type="audio/mpeg">
+	</audio>
+	<script>
+		//loadup
+		//general
+		var visit = localStorage.getItem("visit");
+		var points = localStorage.getItem("points");
+		points=Number(points);
+		//apprentice
+		var apprenticeNum=localStorage.getItem("apprenticeNum");
+		apprenticeNum=Number(apprenticeNum);
+		var apprenticeCost=localStorage.getItem("apprenticeCost");
+		apprenticeCost=Number(apprenticeCost);
+		//chinese
+		var chineseNum=localStorage.getItem("chineseNum");
+		chineseNum=Number(chineseNum);
+		var chineseCost=localStorage.getItem("chineseCost");
+		chineseCost=Number(chineseCost);
+		//mexicai
+		var mexicanNum=localStorage.getItem("mexicanNum");
+		mexicanNum=Number(mexicanNum);
+		var mexicanCost=localStorage.getItem("mexicanCost");
+		mexicanCost=Number(mexicanCost);
+		//trump casino
+		var casinoNum=localStorage.getItem("casinoNum");
+		casinoNum=Number(casinoNum);
+		var casinoCost=localStorage.getItem("casinoCost");
+		casinoCost=Number(casinoCost);
+		//trump airlines
+		var airNum=localStorage.getItem("airNum");
+		airNum=Number(airNum);
+		var airCost=localStorage.getItem("airCost");
+		airCost=Number(airCost);
+		//trump votes
+		var votesNum=localStorage.getItem("votesNum");
+		votesNum=Number(votesNum);
+		var votesCost=localStorage.getItem("votesCost");
+		votesCost=Number(votesCost);
+		//public press
+		var pressNum=localStorage.getItem("pressNum");
+		pressNum=Number(pressNum);
+		var pressCost=localStorage.getItem("pressCost");
+		pressCost=Number(pressCost);
+		//re electiosn
+		var reNum=localStorage.getItem("reNum");
+		reNum=Number(reNum);
+		var reCost=localStorage.getItem("reCost");
+		reCost=Number(reCost);
+		//first login setup
+		if (visit!=1){
+			window.alert("Click on trumps face to fire people. The more people you fire the more upgrades you can get which will inturn help you fire people faster");
+			visit=1;
+			localStorage.setItem("visit", visit);
+			points=0;
+			apprenticeNum=0;
+			apprenticeCost=50;
+			chineseNum=0;
+			chineseCost=100;
+			mexicanNum=0;
+			mexicanCost=500;
+			casinoNum=0;
+			casinoCost=750;
+			airNum=0;
+			airCost=1000;
+			votesNum=0;
+			votesCost=2500;
+			pressNum=0;
+			pressCost=5000;
+			reNum=0;
+			reCost=10000;
+			var pointsPerSec=0;
+		}
+		//set points per second counter
+			var pointPerSecTxtJs = document.getElementById("pointsPerSecTxt");
+			var newPointPerSecTxtJs = document.createTextNode("points per sec:"+pointsPerSec);
+			pointPerSecTxtJs.innerText = newPointPerSecTxtJs.textContent;
+		//refresh points per second counter
+		setInterval(function refreshPointsPerSec(){
+			pointsPerSec=(apprenticeNum*(1/5));
+			pointsPerSec=pointsPerSec+(chineseNum*1);
+			pointsPerSec=pointsPerSec+(mexicanNum*5);
+			pointsPerSec=pointsPerSec+(casinoNum*10);
+			pointsPerSec=pointsPerSec+(airNum*25);
+			pointsPerSec=pointsPerSec+(votesNum*50);
+			pointsPerSec=pointsPerSec+(pressNum*100);
+			pointsPerSec=pointsPerSec+(reNum*250);
+			pointPerSecTxtJs = document.getElementById("pointsPerSecTxt");
+			newPointPerSecTxtJs = document.createTextNode("points per sec:"+pointsPerSec);
+			pointPerSecTxtJs.innerText = newPointPerSecTxtJs.textContent;
+		}, 5)
+		//setting point counter
+		var pointCountTxtJs = document.getElementById("pointCountTxt");
+		var newPointCountTxtJs = document.createTextNode("People Fired:"+points);
+		pointCountTxtJs.innerText = newPointCountTxtJs.textContent;
+		//clicking mechanism
+		document.getElementById("trump").onclick=function click(){
+			points=points+1;
+			var audio=document.getElementById("audio");
+			audio.play();
+		};
+		//refreshing the point counter at the top
+		setInterval(function refreshPointCount(){
+			pointCountTxtJs = document.getElementById("pointCountTxt");
+			newPointCountTxtJs = document.createTextNode("People Fired:"+points);
+			pointCountTxtJs.innerText = newPointCountTxtJs.textContent;
+		}, 5);
+		// setting money bag
+		var moneyBagJs = document.getElementById("moneyBag");
+		moneyBagJs.style.clip= "rect(100000000px,1000000px,10000000px,0px)";
+		setInterval(function() {
+		    moneyBagJs.style.clip= "rect(" + (points/20*(-1)+ 450) + "px,1000000px,10000000px,0px)";
+		}, 1);
+		//price increace mechanism
+		function priceIncrease(upgradeNum){
+			 if (upgradeNum==1){
+			 	apprenticeCost=Math.round(apprenticeCost*1.1);
+			 }
+			 if (upgradeNum==2){
+			 	chineseCost=Math.round(chineseCost*1.1);
+			 }
+			 if (upgradeNum==3){
+			 	mexicanCost=Math.round(mexicanCost*1.1);
+			 }
+			 if (upgradeNum==4){
+			 	casinoCost=Math.round(casinoCost*1.1);
+			 }
+			 if (upgradeNum==5){
+			 	airCost=Math.round(airCost*1.1);
+			 }
+			 if (upgradeNum==6){
+			 	votesCost=Math.round(votesCost*1.1);
+			 }
+			 if (upgradeNum==7){
+			 	pressCost=Math.round(pressCost*1.1);
+			 }
+			 if (upgradeNum==8){
+			 	reCost=Math.round(reCost*1.1);
+			 }
+		}
+		// buying mechanism
+		function buy(price, upgradeNum){
+			if (price>points){
+				window.alert("you havent fired enough people");
+			}
+			if (price<=points){
+				points=points-price;
+				if (upgradeNum==1){
+					apprenticeNum=apprenticeNum+1;
+					priceIncrease(upgradeNum);
+				}
+				if (upgradeNum==2){
+					chineseNum=chineseNum+1;
+					priceIncrease(upgradeNum);
+				}
+				if (upgradeNum==3){
+					mexicanNum=mexicanNum+1;
+					priceIncrease(upgradeNum);
+				}
+				if (upgradeNum==4){
+					casinoNum=casinoNum+1;
+					priceIncrease(upgradeNum);
+				}
+				if (upgradeNum==5){
+					airNum=airNum+1;
+					priceIncrease(upgradeNum);
+				}
+				if (upgradeNum==6){
+					votesNum=votesNum+1;
+					priceIncrease(upgradeNum);
+				}
+				if (upgradeNum==7){
+					pressNum=pressNum+1;
+					priceIncrease(upgradeNum);
+				}
+				if (upgradeNum==8){
+					reNum=reNum+1;
+					priceIncrease(upgradeNum);
+				}
+			}
+		}
+		//setting apprentice box
+		//apprentice number
+		var apprenticeCountTxtJs = document.getElementById("apprenticeNumTxt");
+		var newApprenticeCountTxtJs = document.createTextNode("Owned:"+apprenticeNum);
+		apprenticeCountTxtJs.innerText = newApprenticeCountTxtJs.textContent;
+		//apprentice cost
+		var apprenticeCostTxtJs = document.getElementById("apprenticeCostTxt");
+		var newApprenticeCostTxtJs = document.createTextNode("price:"+apprenticeCost);
+		apprenticeCostTxtJs.innerText = newApprenticeCostTxtJs.textContent;
+		//apprentice click mechanism
+		document.getElementById("apprentice").onclick=function apprenticeClick(){
+			buy(apprenticeCost, 1);
+		};
+		//refreshing apprentice box
+		setInterval( function apprenticeRefresh(){
+			apprenticeCountTxtJs = document.getElementById("apprenticeNumTxt");
+			newApprenticeCountTxtJs = document.createTextNode("Owned:"+apprenticeNum);
+			apprenticeCountTxtJs.innerText = newApprenticeCountTxtJs.textContent;
+			apprenticeCostTxtJs = document.getElementById("apprenticeCostTxt");
+			newApprenticeCostTxtJs = document.createTextNode("price:"+apprenticeCost);
+			apprenticeCostTxtJs.innerText = newApprenticeCostTxtJs.textContent;
+		}, 5);
+		//setting chinese box
+		//chinese number
+		var chineseCountTxtJs = document.getElementById("chineseNumTxt");
+		var newChineseCountTxtJs = document.createTextNode("Owned:"+chineseNum);
+		chineseCountTxtJs.innerText = newChineseCountTxtJs.textContent;
+		//chinese cost
+		var chineseCostTxtJs = document.getElementById("chineseCostTxt");
+		var newChineseCostTxtJs = document.createTextNode("price:"+chineseCost);
+		chineseCostTxtJs.innerText = newChineseCostTxtJs.textContent;
+		//chinese click mechanism
+		document.getElementById("chinese").onclick=function chineseClick(){
+			buy(chineseCost, 2);
+		};
+		//refreshing chinese box
+		setInterval( function chineseRefresh(){
+			chineseCountTxtJs = document.getElementById("chineseNumTxt");
+			newChineseCountTxtJs = document.createTextNode("Owned:"+chineseNum);
+			chineseCountTxtJs.innerText = newChineseCountTxtJs.textContent;
+			chineseCostTxtJs = document.getElementById("chineseCostTxt");
+			newChineseCostTxtJs = document.createTextNode("price:"+chineseCost);
+			chineseCostTxtJs.innerText = newChineseCostTxtJs.textContent;
+		}, 5);
+		//setting mexican box
+		//mexican number
+		var mexicanCountTxtJs = document.getElementById("mexicanNumTxt");
+		var newMexicanCountTxtJs = document.createTextNode("Owned:"+mexicanNum);
+		mexicanCountTxtJs.innerText = newMexicanCountTxtJs.textContent;
+		//mexican cost
+		var mexicanCostTxtJs = document.getElementById("mexicanCostTxt");
+		var newMexicanCostTxtJs = document.createTextNode("price:"+mexicanCost);
+		mexicanCostTxtJs.innerText = newMexicanCostTxtJs.textContent;
+		//mexican click mechanism
+		document.getElementById("mexican").onclick=function mexicanClick(){
+			buy(mexicanCost, 3);
+		};
+		//refreshing mexican box
+		setInterval( function mexicanRefresh(){
+			mexicanCountTxtJs = document.getElementById("mexicanNumTxt");
+			newMexicanCountTxtJs = document.createTextNode("Owned:"+mexicanNum);
+			mexicanCountTxtJs.innerText = newMexicanCountTxtJs.textContent;
+			mexicanCostTxtJs = document.getElementById("mexicanCostTxt");
+			newMexicanCostTxtJs = document.createTextNode("price:"+mexicanCost);
+			mexicanCostTxtJs.innerText = newMexicanCostTxtJs.textContent;
+		}, 5);
+		//setting casino box
+		//casino number
+		var casinoCountTxtJs = document.getElementById("casinoNumTxt");
+		var newCasinoCountTxtJs = document.createTextNode("Owned:"+casinoNum);
+		casinoCountTxtJs.innerText = newCasinoCountTxtJs.textContent;
+		//casino cost
+		var casinoCostTxtJs = document.getElementById("casinoCostTxt");
+		var newCasinoCostTxtJs = document.createTextNode("price:"+casinoCost);
+		casinoCostTxtJs.innerText = newCasinoCostTxtJs.textContent;
+		//casino click mechanism
+		document.getElementById("casino").onclick=function casinoClick(){
+			buy(casinoCost, 4);
+		};
+		//refreshing casino box
+		setInterval( function casinoRefresh(){
+			casinoCountTxtJs = document.getElementById("casinoNumTxt");
+			newCasinoCountTxtJs = document.createTextNode("Owned:"+casinoNum);
+			casinoCountTxtJs.innerText = newCasinoCountTxtJs.textContent;
+			casinoCostTxtJs = document.getElementById("casinoCostTxt");
+			newCasinoCostTxtJs = document.createTextNode("price:"+casinoCost);
+			casinoCostTxtJs.innerText = newCasinoCostTxtJs.textContent;
+		}, 5);
+		//setting air box
+		//air number
+		var airCountTxtJs = document.getElementById("airNumTxt");
+		var newairCountTxtJs = document.createTextNode("Owned:"+airNum);
+		airCountTxtJs.innerText = newairCountTxtJs.textContent;
+		//air cost
+		var airCostTxtJs = document.getElementById("airCostTxt");
+		var newairCostTxtJs = document.createTextNode("price:"+airCost);
+		airCostTxtJs.innerText = newairCostTxtJs.textContent;
+		//air click mechanism
+		document.getElementById("air").onclick=function airClick(){
+			buy(airCost, 5);
+		};
+		//refreshing air box
+		setInterval( function airRefresh(){
+			airCountTxtJs = document.getElementById("airNumTxt");
+			newairCountTxtJs = document.createTextNode("Owned:"+airNum);
+			airCountTxtJs.innerText = newairCountTxtJs.textContent;
+			airCostTxtJs = document.getElementById("airCostTxt");
+			newairCostTxtJs = document.createTextNode("price:"+airCost);
+			airCostTxtJs.innerText = newairCostTxtJs.textContent;
+		}, 5);
+		//setting votes box
+		//votes number
+		var votesCountTxtJs = document.getElementById("votesNumTxt");
+		var newvotesCountTxtJs = document.createTextNode("Owned:"+votesNum);
+		votesCountTxtJs.innerText = newvotesCountTxtJs.textContent;
+		//votes cost
+		var votesCostTxtJs = document.getElementById("votesCostTxt");
+		var newvotesCostTxtJs = document.createTextNode("price:"+votesCost);
+		votesCostTxtJs.innerText = newvotesCostTxtJs.textContent;
+		//votes click mechanism
+		document.getElementById("votes").onclick=function votesClick(){
+			buy(votesCost, 6);
+		};
+		//refreshing votes box
+		setInterval( function votesRefresh(){
+			votesCountTxtJs = document.getElementById("votesNumTxt");
+			newvotesCountTxtJs = document.createTextNode("Owned:"+votesNum);
+			votesCountTxtJs.innerText = newvotesCountTxtJs.textContent;
+			votesCostTxtJs = document.getElementById("votesCostTxt");
+			newvotesCostTxtJs = document.createTextNode("price:"+votesCost);
+			votesCostTxtJs.innerText = newvotesCostTxtJs.textContent;
+		}, 5);
+		//setting press box
+		//press number
+		var pressCountTxtJs = document.getElementById("pressNumTxt");
+		var newpressCountTxtJs = document.createTextNode("Owned:"+pressNum);
+		pressCountTxtJs.innerText = newpressCountTxtJs.textContent;
+		//cost
+		var pressCostTxtJs = document.getElementById("pressCostTxt");
+		var newpressCostTxtJs = document.createTextNode("price:"+pressCost);
+		pressCostTxtJs.innerText = newpressCostTxtJs.textContent;
+		//press click mechanism
+		document.getElementById("press").onclick=function pressClick(){
+			buy(pressCost, 7);
+		};
+		//refreshing press box
+		setInterval( function pressRefresh(){
+			pressCountTxtJs = document.getElementById("pressNumTxt");
+			newpressCountTxtJs = document.createTextNode("Owned:"+pressNum);
+			pressCountTxtJs.innerText = newpressCountTxtJs.textContent;
+			pressCostTxtJs = document.getElementById("pressCostTxt");
+			newpressCostTxtJs = document.createTextNode("price:"+pressCost);
+			pressCostTxtJs.innerText = newpressCostTxtJs.textContent;
+		}, 5);
+		//setting re box
+		//re number
+		var reCountTxtJs = document.getElementById("reNumTxt");
+		var newreCountTxtJs = document.createTextNode("Owned:"+reNum);
+		reCountTxtJs.innerText = newreCountTxtJs.textContent;
+		//re cost
+		var reCostTxtJs = document.getElementById("reCostTxt");
+		var newreCostTxtJs = document.createTextNode("price:"+reCost);
+		reCostTxtJs.innerText = newreCostTxtJs.textContent;
+		//re click mechanism
+		document.getElementById("re").onclick=function reClick(){
+			buy(reCost, 8);
+		};
+		//refreshing re box
+		setInterval( function reRefresh(){
+			reCountTxtJs = document.getElementById("reNumTxt");
+			newreCountTxtJs = document.createTextNode("Owned:"+reNum);
+			reCountTxtJs.innerText = newreCountTxtJs.textContent;
+			reCostTxtJs = document.getElementById("reCostTxt");
+			newreCostTxtJs = document.createTextNode("price:"+reCost);
+			reCostTxtJs.innerText = newreCostTxtJs.textContent;
+		}, 5);
+		//upgrade points controll
+		setInterval( function upgradePointsApprentice() {
+		    points=points+(apprenticeNum*1);
+		}, 5000);
+		setInterval( function upgradePoints() {
+			points=points+(chineseNum*1);
+			points=points+(mexicanNum*5);
+			points=points+(casinoNum*10);
+			points=points+(airNum*25);
+			points=points+(votesNum*50);
+			points=points+(pressNum*100);
+			points=points+(reNum*250);
+		}, 1000);
+		//save function
+		setInterval( function save() {
+		    localStorage.setItem("points", points);
+		    localStorage.setItem("apprenticeNum", apprenticeNum);
+		    localStorage.setItem("apprenticeCost", apprenticeCost);
+		    localStorage.setItem("chineseNum", chineseNum);
+		    localStorage.setItem("chineseCost", chineseCost);
+		    localStorage.setItem("mexicanNum", mexicanNum);
+		    localStorage.setItem("mexicanCost", mexicanCost);
+		    localStorage.setItem("casinoNum", casinoNum);
+		    localStorage.setItem("casinoCost", casinoCost);
+		    localStorage.setItem("airNum", airNum);
+		    localStorage.setItem("airCost", airCost);
+		    localStorage.setItem("votesNum", votesNum);
+		    localStorage.setItem("votesCost", votesCost);
+		    localStorage.setItem("pressNum", pressNum);
+		    localStorage.setItem("pressCost", pressCost);
+		    localStorage.setItem("reNum", reNum);
+		    localStorage.setItem("reCost", reCost);
+		}, 5);
+	</script>
+	<script>
+	 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-71624396-1', 'auto');
+	  ga('require', 'linkid');
+	  ga('send', 'pageview');
+
+	</script>
+</body>
+</html>
